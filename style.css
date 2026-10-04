@@ -441,3 +441,173 @@ body{background:radial-gradient(circle at 55% -10%,#0d4670 0,#061321 34%,#030b13
   .accessIntro{padding:18px!important}
   .accessIntro h2{font-size:24px!important}
 }
+
+/* ============================================================
+   STAGE 20 — MOBILE FINISH
+   Phone-specific cleanup based on live-device testing.
+   Desktop/tablet presentation remains unchanged.
+   ============================================================ */
+@media(max-width:700px){
+  html,body{max-width:100%;overflow-x:hidden}
+
+  /* Landing page: remove the oversized desktop/device artwork on phones.
+     It was collapsing into a stray vertical line and leaving dead space. */
+  .hero{min-height:auto!important;padding:42px 20px 48px!important;gap:22px!important}
+  .hero .device,.hero .realDevice,.hero .facsimileDevice{display:none!important}
+  .hero h1{font-size:clamp(38px,11vw,48px)!important;line-height:1.02!important;letter-spacing:-1.5px!important}
+  .lead{font-size:17px!important;line-height:1.65!important;color:#f0f6fc!important}
+  .actions{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+  .actions button{width:100%!important;min-height:56px!important}
+  .trust{gap:12px 18px!important;color:#d7e3ef!important;font-size:12px!important}
+
+  /* Cleaner, brighter reading contrast throughout phone cards. */
+  .copy p,.featureList span,.storyNote,.whyPanel p,.demoGrid p,
+  .opsKpis span,.recordGrid p,.timeline p,.registerRow,.checks small,
+  .workspaceHero p,.conversion p,.accessIntro p,.simpleSteps span,
+  .accessCards p,.accessCards span,.salesFlow span,.outreachStats span,
+  .outreachList span,.clientTiles small,.mobileCard,.photoGrid figcaption span{
+    color:#eef5fb!important;
+  }
+  .featureList b,.accessCards small,.accessCards b,.simpleSteps b,
+  .salesFlow b,.outreachStats b,.outreachList b{color:#70c8ff!important}
+
+  /* Buttons: keep text crisp and visible against the coloured cards. */
+  .workspace button,.conversion button,.subscriptionPage button,
+  .accessCards button,.simpleSteps button,.outreachSteps button{
+    color:#fff!important;
+    background:#123b60!important;
+    border:1px solid #55b9ef!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 6px 14px rgba(0,0,0,.35)!important;
+  }
+  .guide button.primary,.primary{background:linear-gradient(90deg,#177ed8,#149f9a)!important;color:#fff!important}
+  .guide .skip,.ghost{background:#13263a!important;color:#f4f8fc!important}
+
+  /* Workspace spacing: full use of the phone width without clipping. */
+  .workspace{padding:16px 12px 34px!important;overflow:hidden!important}
+  .workspaceHero{min-height:0!important;padding:22px 18px!important;border-radius:14px!important}
+  .workspaceHero h1{font-size:29px!important;line-height:1.08!important}
+  .workspaceHero p{font-size:14px!important;line-height:1.6!important}
+  .portalStage,.clientStage{padding:16px!important;gap:24px!important;margin:14px 0!important}
+  .copy h2{font-size:27px!important;line-height:1.18!important}
+  .copy p{font-size:15px!important}
+  .featureList>div{padding:17px 16px!important}
+  .featureList span{font-size:14px!important;line-height:1.6!important}
+  .storyNote{padding:17px!important;font-size:14px!important;line-height:1.65!important}
+  .accessBoard,.outreachBoard,.complianceBoard{padding:12px!important}
+  .accessIntro{padding:18px 16px!important}
+
+  /* Client photo viewer: always starts at the top, scrolls normally and
+     keeps the close button reachable on a real phone. */
+  .modal{display:block!important;overflow-y:auto!important;padding:10px!important;-webkit-overflow-scrolling:touch}
+  .photoModal>div{width:100%!important;max-width:none!important;margin:8px auto 24px!important;padding:112px 14px 18px!important;border-radius:14px!important}
+  .photoModal>div:after{height:92px!important}
+  .photoModal .close{position:fixed!important;top:58px!important;right:18px!important;width:44px!important;height:44px!important;border-radius:50%!important;background:#071522e8!important;border:1px solid #6dc9f2!important;color:#fff!important;display:grid!important;place-items:center!important;font-size:30px!important;line-height:1!important;z-index:10050!important}
+  .photoModal>div>h2{font-size:27px!important;line-height:1.15!important;margin:10px 0!important}
+  .photoModal>div>p{font-size:15px!important;line-height:1.6!important;color:#f2f7fb!important}
+  .photoGrid{grid-template-columns:1fr!important;gap:14px!important;margin:16px 0!important}
+  .photoGrid figure{width:100%!important;max-width:100%!important}
+  .photoModal .photoGrid img{width:100%!important;height:190px!important;object-fit:cover!important;object-position:center 30%!important}
+  .photoGrid figcaption{padding:14px 15px!important}
+  .photoGrid figcaption b{font-size:18px!important}
+  .photoGrid figcaption span{font-size:13px!important}
+  .photoAudit{gap:7px!important}
+  .photoAudit span{font-size:11px!important;padding:7px 9px!important}
+
+  /* Subscription form: top-aligned and comfortably scrollable. */
+  .subscriptionModal{display:block!important;overflow-y:auto!important;padding:10px!important}
+  .subscriptionModal>div{margin:8px auto 24px!important;max-height:none!important}
+  .subscriptionModal .close{position:sticky!important;float:right!important;top:8px!important;margin:8px 8px -52px 0!important;background:#071522e8!important;border:1px solid #6dc9f2!important;border-radius:50%!important;width:42px!important;height:42px!important;display:grid!important;place-items:center!important;z-index:10050!important}
+  .interestBody{padding-left:16px!important;padding-right:16px!important}
+  .interestBody>p{color:#f1f6fb!important}
+  .interestGrid label{color:#fff!important}
+
+  /* Avoid any desktop mock-up overflow inside the demo on narrow screens. */
+  .clientWindow,.bigphone,.interactivePhone{max-width:100%!important}
+  .bigphone{width:min(100%,310px)!important}
+  .clientWindow header{gap:10px!important;flex-wrap:wrap!important}
+}
+
+@media(max-width:420px){
+  .workspace{padding-left:9px!important;padding-right:9px!important}
+  .portalStage,.clientStage{padding:12px!important}
+  .photoModal .photoGrid img{height:170px!important}
+  .accessCards article,.simpleSteps>div,.featureList>div{padding-left:14px!important;padding-right:14px!important}
+}
+
+/* ============================================================
+   STAGE 20.1 — READABILITY / CONTRAST PASS
+   Brighten explanatory copy and remove pale button labels.
+   ============================================================ */
+.workspace p,.workspace span,.workspace li,.workspace small,
+.demoGrid p,.copy p,.featureList span,.storyNote,.storyNote p,
+.whyPanel p,.opsKpis span,.record p,.recordGrid p,.timeline p,
+.registerRow,.checks small,.accessIntro p,.simpleSteps span,
+.accessCards p,.accessCards span,.salesFlow span,.outreachStats span,
+.outreachList span,.quoteList button span,.briefText p,.conversion p,
+.subHero p,.subBenefits p,.subOutcome p{
+  color:#f1f6fb!important;
+  opacity:1!important;
+  -webkit-text-fill-color:#f1f6fb!important;
+}
+.workspace h1,.workspace h2,.workspace h3,.workspace h4,
+.demoGrid h3,.accessCards h3,.whyPanel h3,.record h2,.briefText h2{
+  color:#fff!important;
+  opacity:1!important;
+  -webkit-text-fill-color:#fff!important;
+}
+
+/* Keep small category/eyebrow labels bright rather than washed grey. */
+.workspace .live,.workspaceHero .live,.copy small,.accessIntro small,
+.accessCards small,.featureList b,.simpleSteps b,.salesFlow b,
+.outreachStats b,.outreachList b,.whyPanel small{
+  color:#62dfff!important;
+  opacity:1!important;
+  -webkit-text-fill-color:#62dfff!important;
+}
+
+/* Client Portal tiles previously inherited the original white desktop tile
+   treatment, producing white boxes and faint lettering. */
+.clientTiles button{color:#fff!important;-webkit-text-fill-color:#fff!important}
+.clientTiles button b{
+  display:block!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
+}
+.clientTiles button small{
+  color:#eef6fc!important;
+  -webkit-text-fill-color:#eef6fc!important;
+  opacity:1!important;
+}
+
+/* Role/workspace action buttons: solid blue instead of the pale/white face. */
+.accessCards button,.accessBoard button,.outreachBoard button{
+  background:linear-gradient(180deg,#258fd8,#1166a6)!important;
+  border:1px solid #65cfff!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.45)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 6px 14px rgba(0,0,0,.32)!important;
+}
+
+/* The LIVE badge sits over photography: strengthen its supporting line. */
+.workspaceHero .metric small,.workspaceHero .metric span{
+  color:#eaf7ff!important;
+  -webkit-text-fill-color:#eaf7ff!important;
+  opacity:1!important;
+}
+
+@media(max-width:700px){
+  .workspace p,.workspace span,.workspace li,.workspace small,
+  .copy p,.featureList span,.storyNote,.whyPanel p,.accessIntro p,
+  .simpleSteps span,.accessCards p,.accessCards span,.salesFlow span,
+  .outreachStats span,.outreachList span,.clientTiles small{
+    color:#f7fbff!important;
+    -webkit-text-fill-color:#f7fbff!important;
+    opacity:1!important;
+  }
+}
