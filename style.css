@@ -617,3 +617,52 @@ body{background:radial-gradient(circle at 55% -10%,#0d4670 0,#061321 34%,#030b13
 @media(max-width:1100px){.weekGrid{grid-template-columns:repeat(4,1fr)}.newGrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:850px){.appHeader{margin:0 0 14px}.appBanner{min-height:82px;padding:12px 15px}.appBanner img{width:58px;height:58px}.appBanner b{font-size:22px}.mapDemo{grid-template-columns:1fr}.mapCanvas{height:390px}.majorStats{grid-template-columns:repeat(2,1fr)}.weekGrid{grid-template-columns:repeat(2,1fr)}.weekGrid>div{min-height:170px}.majorTable p{grid-template-columns:1fr}.majorTable p>*{display:block}.stockHead{grid-template-columns:1fr}}
 @media(max-width:520px){.appQuote{font-size:9px;padding:7px 10px}.appBanner{gap:10px;min-height:70px}.appBanner img{width:48px;height:48px}.appBanner b{font-size:18px}.appBanner small{font-size:7px;letter-spacing:1.2px}.appBanner strong{font-size:9px}.newGrid{grid-template-columns:1fr}.newGrid>button{min-height:125px}.mapCanvas{height:320px}.majorStats{grid-template-columns:1fr 1fr}.weekGrid{grid-template-columns:1fr}.weekGrid>div{min-height:120px}.plannerTop{font-size:11px;gap:8px}.roleHero{padding:18px}.roleHero h2{font-size:23px}}
+
+/* STAGE 17 — DEMO SALES NARRATIVE, ACCESSIBILITY & DEMO IDENTITY */
+/* Accessibility: informational LIVE/DEMO labels are intentionally not bold. */
+.workspaceHero .metric{font-weight:500!important}
+.workspaceHero .metric small{font-weight:400!important;letter-spacing:.04em!important}
+.workspaceHero .live{font-weight:500!important}
+
+.explainBlock{margin-top:18px;padding:24px 26px;border:1px solid #2b6389;border-radius:16px;background:linear-gradient(145deg,#102d49,#0b2035 60%,#091725);box-shadow:inset 0 1px 0 #ffffff1d,0 12px 28px #0005}
+.explainBlock h3{margin:0 0 12px;color:#fff;font-size:20px}
+.explainBlock p{margin:9px 0 0;color:#eaf4fc!important;line-height:1.72;font-size:14px;max-width:1100px}
+
+/* Planner: strong contrast on every day and demo job. */
+.weekGrid>div{background:linear-gradient(160deg,#102b45,#091827)!important;border-color:#2f6b92!important}
+.weekGrid small{color:#75d7ff!important;-webkit-text-fill-color:#75d7ff!important;font-weight:600!important}
+.weekGrid button{background:linear-gradient(145deg,#154d7b,#0e3558)!important;border:1px solid #48b9ff!important;color:#fff!important;-webkit-text-fill-color:#fff!important;box-shadow:inset 0 1px #ffffff26,0 8px 18px #0005!important}
+.weekGrid button b{color:#fff!important;-webkit-text-fill-color:#fff!important}
+.weekGrid button span{color:#e7f4ff!important;-webkit-text-fill-color:#e7f4ff!important}
+.weekGrid button em{color:#5ff0c7!important;-webkit-text-fill-color:#5ff0c7!important}
+.weekGrid p{color:#c7d8e7!important;-webkit-text-fill-color:#c7d8e7!important}
+
+/* Major Accounts workflow action: remove pale/white face. */
+.majorTable button{margin-top:16px;padding:12px 16px;border-radius:10px;border:1px solid #4bc8ff;background:linear-gradient(180deg,#218dcc,#125b93);color:#fff!important;-webkit-text-fill-color:#fff!important;cursor:pointer;box-shadow:inset 0 1px #ffffff30,0 8px 18px #0005}
+
+/* Landing page: actual JonCor screenshots presented inside realistic hardware. */
+.realDeviceShowcase{height:470px;position:relative;overflow:visible}
+.realLaptop{position:absolute;left:0;top:28px;width:84%;z-index:2;filter:drop-shadow(0 28px 34px #000b)}
+.realLaptopScreen{aspect-ratio:16/9;background:#05080d;border:10px solid #202a38;border-bottom-width:16px;border-radius:15px 15px 6px 6px;overflow:hidden;box-shadow:inset 0 0 0 1px #75869a}
+.realLaptopScreen img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+.realLaptopBase{height:16px;margin:-1px -6% 0;background:linear-gradient(#a4afba,#586676 55%,#303c49);clip-path:polygon(4% 0,96% 0,100% 60%,58% 100%,42% 100%,0 60%);border-radius:0 0 22px 22px;box-shadow:inset 0 1px #fff9}
+.realPhone{position:absolute;right:0;bottom:5px;width:29%;height:80%;z-index:3;border:8px solid #222b38;border-radius:31px;background:#05080c;overflow:hidden;box-shadow:0 28px 48px #000d,inset 0 0 0 1px #7b8998}
+.realPhone img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.realPhoneNotch{position:absolute;z-index:5;top:6px;left:34%;right:34%;height:7px;border-radius:9px;background:#05070a;box-shadow:0 1px #ffffff18}
+
+@media(max-width:850px){
+ .realDeviceShowcase{height:390px;margin-top:15px}
+ .realLaptop{width:88%;top:25px}
+ .realPhone{width:30%;height:78%;right:0}
+ .explainBlock{padding:20px}
+}
+@media(max-width:520px){
+ .realDeviceShowcase{height:300px}
+ .realLaptop{width:91%;top:22px}
+ .realLaptopScreen{border-width:6px;border-bottom-width:10px;border-radius:10px 10px 4px 4px}
+ .realLaptopBase{height:11px}
+ .realPhone{width:31%;height:77%;border-width:5px;border-radius:22px}
+ .explainBlock{padding:17px}
+ .explainBlock h3{font-size:18px}
+ .explainBlock p{font-size:13px;line-height:1.65}
+}
